@@ -1,0 +1,17 @@
+    private val differ: AsyncListDiffer<Run> = AsyncListDiffer(this, DiffUtilsImpl())
+
+    private inner class DiffUtilsImpl : DiffUtil.ItemCallback<Run>() {
+        override fun areItemsTheSame(oldItem: Run, newItem: Run): Boolean {
+            return oldItem.hashCode() == newItem.hashCode()
+        }
+
+        override fun areContentsTheSame(oldItem: Run, newItem: Run): Boolean {
+            return oldItem.id == newItem.id
+        }
+    }
+
+    var runs: List<Run>
+        get() = differ.currentList
+        set(value) {
+            differ.submitList(value)
+        }

@@ -1,0 +1,190 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Base.Theme.EilajiPlusPlus" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:navigationBarColor">@color/white</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="27">true</item>
+        <item name="android:textViewStyle">@style/AppTextViewStyle</item>
+        <item name="android:fontFamily">@font/cairo_medium</item>
+
+        <item name="radioButtonStyle">@style/Widget.App.RadioButton</item>
+
+        <!-- target android sdk versions < 26 and > 14 if theme other than AppCompat -->
+        <item name="fontFamily">@font/cairo_medium</item>
+    </style>
+
+    <style name="Theme.EilajiPlus" parent="Base.Theme.EilajiPlusPlus"/>
+
+    <!--  #############################################################  -->
+
+    <style name="Theme.Eilaji.MainActivity" parent="Base.Theme.EilajiPlus">
+        <item name="android:windowLightStatusBar">true</item><!--tools:targetApi="23"-->
+        <item name="android:statusBarColor">@color/white</item>
+    </style>
+
+    <style name="Theme.Eilaji.BaseActivity" parent="Base.Theme.EilajiPlus">
+        <item name="android:windowLightStatusBar">false</item><!--tools:targetApi="23"-->
+        <item name="android:statusBarColor">@color/primary_color</item>
+    </style>
+
+    <style name="Theme.Eilaji.TranslucentStatus" parent="Base.Theme.EilajiPlus">
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
+    <style name="Theme.App.MySplash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/white</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+        <item name="postSplashScreenTheme">@style/Theme.Eilaji.MainActivity</item>
+    </style>
+
+    <!--  #############################################################  -->
+
+    <style name="AppTextViewStyle" parent="android:Widget.TextView">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <!--  #############################################################  -->
+
+    <style name="AppIconStyle">
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:scaleX">1.7</item>
+        <item name="android:scaleY">1.7</item>
+        <item name="android:src">@drawable/ic_launcher_foreground</item>
+    </style>
+
+    <style name="CircularProgressStyle" parent="Widget.Material3.CircularProgressIndicator">
+        <item name="android:indeterminate">true</item>
+        <item name="indicatorColor">@color/black</item>
+        <item name="trackCornerRadius">@dimen/_5sdp</item>
+        <item name="trackThickness">@dimen/_2sdp</item>
+    </style>
+
+    <style name="checkBoxStyle" parent="Base.Theme.AppCompat">
+        <item name="colorAccent">@color/primary_color</item>
+        <item name="android:textColorSecondary">@color/primary_color</item>
+    </style>
+
+    <!--  #############################################################  -->
+
+    <style name="TextAppearance.expandedTitle" parent="">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ToolBarTitleAppearance" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">@dimen/_16sdp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!--  #############################################################  -->
+
+    <style name="TextInputAccountInformationStyle" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusTopEnd">@dimen/_4sdp</item>
+        <item name="boxCornerRadiusTopStart">@dimen/_4sdp</item>
+        <item name="boxCornerRadiusBottomStart">0dp</item>
+        <item name="boxCornerRadiusBottomEnd">0dp</item>
+        <item name="boxBackgroundColor">@color/gray</item>
+        <item name="boxStrokeColor">@drawable/selector_text_input_account_information</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="boxStrokeWidthFocused">@dimen/_1sdp</item>
+        <item name="android:textColorHint">@color/gray_dark</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="PrimaryButton" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/primary_color</item>
+        <item name="android:paddingTop">@dimen/_12sdp</item>
+        <item name="android:paddingBottom">@dimen/_12sdp</item>
+        <item name="cornerRadius">@dimen/_4sdp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">@dimen/_16ssp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="elevation">@dimen/_15sdp</item>
+    </style>
+
+    <!--  #############################################################  -->
+
+    <style name="Widget.App.TimePicker" parent="Widget.Material3.MaterialTimePicker">
+        <item name="colorPrimary">@color/shrine_pink_100</item>
+        <item name="colorOnPrimary">@color/shrine_pink_900</item>
+        <item name="colorOnSurface">@color/shrine_pink_100</item>
+        <item name="chipStyle">@style/Widget.App.Chip</item>
+
+        <item name="clockFaceBackgroundColor">@color/shrine_pink_100</item>
+        <item name="clockHandColor">@color/shrine_pink_900</item>
+        <item name="clockNumberTextColor">@color/shrine_pink_100</item>
+    </style>
+    <style name="Widget.App.Chip" parent="Widget.Material3.MaterialTimePicker.Display">
+        <item name="android:textColor">@color/shrine_display_text_color</item>
+    </style>
+    <!--  #############################################################  -->
+
+    <style name="TextButtonStyle">
+        <item name="android:background">@drawable/ripple_rounded_effect</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:paddingStart">@dimen/_5sdp</item>
+        <item name="android:paddingEnd">@dimen/_5sdp</item>
+        <item name="android:paddingTop">@dimen/_12sdp</item>
+        <item name="android:paddingBottom">@dimen/_12sdp</item>
+    </style>
+
+    <style name="RippleRectangleEffectCardStyle" parent="Widget.MaterialComponents.CardView">
+        <item name="android:foreground">@drawable/ripple_rectangle_effect</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <!--  change default color in light mode -->
+        <item name="cardBackgroundColor">@color/white</item>
+        <!--  remove default stroke  -->
+        <item name="strokeWidth">0dp</item>
+    </style>
+
+    <style name="SelectableItemBackgroundStyle">
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <style name="RippleRoundedEffectStyle">
+        <item name="android:background">@drawable/ripple_rounded_effect</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <style name="RippleCircleEffectStyle">
+        <item name="android:background">@drawable/ripple_circle_effect</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <!--  #############################################################  -->
+    <style name="AppBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppBottomSheetModalStyle</item>
+    </style>
+
+    <style name="AppBottomSheetModalStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/shape_bottom_sheet</item>
+    </style>
+
+    <style name="Widget.App.RadioButton" parent="Widget.Material3.CompoundButton.RadioButton">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.RadioButton</item>
+    </style>
+
+    <style name="ThemeOverlay.App.RadioButton" parent="">
+        <item name="colorOnSurface">#8093f1</item>
+        <item name="colorPrimary">#b388eb</item>
+    </style>
+
+    <style name="black_light_white_night_background">
+        <item name="android:background">@color/black</item>
+    </style>
+
+    <style name="white_light_gray_night_background">
+        <item name="android:background">#FFFFFF</item>
+    </style>
+
+    <style name="item_image_profile_tint">
+        <item name="android:backgroundTint">@color/black</item>
+    </style>
+</resources>

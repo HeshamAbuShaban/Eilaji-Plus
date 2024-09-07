@@ -1,0 +1,114 @@
+<resources>
+    <string name="app_name">Eilaji-Plus</string>
+    <string name="full_name">Full Name</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="login">Login</string>
+    <string name="remember_me">Remember me</string>
+    <string name="do_not_have_an_account">Don\'t have an account?</string>
+    <string name="create_a_new_account">Create a new account</string>
+    <string name="skip">Skip</string>
+    <string name="forgot_your_password">Forgot your password?</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="create_an_account">Create an account</string>
+    <string name="have_an_account">Have an account?</string>
+    <string name="send">Send</string>
+    <string name="enter_the_email_sender_pin">Enter the email sender\'s PIN</string>
+    <string name="confirmation">Confirmation</string>
+    <string name="did_not_get_the_code">Didn\'t get the code?</string>
+    <string name="send_a_new_code">Send a new code</string>
+    <string name="sign_in">Sign in</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hint">****</string>
+
+    <string name="search_fragment_temp">This is a screen that shows when user clicks on Search bar in home!</string>
+
+
+    <string name="title_activity_base">BaseActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <string name="title_reminder_notification">Reminder Take Your Pill</string>
+
+    <string name="title_send_prescription">Send Prescription</string>
+
+    <string name="title_profile">Profile</string>
+    <string name="title_categories">Categories</string>
+
+    <string name="what_are_you_looking_for">What are you looking for?</string>
+
+
+    <string name="example_text_for_on_boarding" translatable="false">هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص</string>
+    <string name="show_all">show all</string>
+    <string name="categories_pharmaceuticals">Categories pharmaceuticals</string>
+    <string name="best_seller">Best seller</string>
+    <string name="connect_with_us">Connect with us</string>
+    <string name="rate_the_app">Rate the app</string>
+    <string name="log_out">Log out</string>
+    <string name="favorites">Favorites</string>
+    <string name="change_password">Change password</string>
+    <string name="delivery_to_your_location">Delivery to your location</string>
+    <string name="chats">Chats</string>
+    <string name="categories">Categories</string>
+    <string name="pharmacies_map">Pharmacies map</string>
+    <string name="send_prescription">Send Prescription</string>
+    <string name="search">Search</string>
+
+    <string name="total_price">Total price : 60$</string>
+    <string name="favorite">Favorite</string>
+    <string name="add_address">Add Address</string>
+    <string name="add">Add</string>
+    <string name="additional_address_details">Additional address details</string>
+    <string name="attach_a_picture_of_a_prescription">Attach a picture of a prescription</string>
+    <string name="or">Or</string>
+    <string name="description_of_the_prescription">Description of the prescription</string>
+    <string name="write_your_application_here">Write your application here</string>
+    <string name="share">Share</string>
+    <string name="_00_00_00" translatable="false">00:00:00</string>
+    <string name="enter_a_reminder_text_e_g_medicine_name">Enter a (reminder text,e.g. medicine name)</string>
+    <string name="remind_me_repeatedly">Remind me Repeatedly</string>
+    <string name="remind_me_one_time">Remind me One Time</string>
+    <string name="remind_me_something">Remind me of Something..</string>
+    <string name="time_unit">Time Unit e.g.(hours, minutes ,etc..)</string>
+    <string name="repeat_interval">Repeat Interval e.g.(1,2,4..)</string>
+    <string name="enter_a_valid_repeat_interval_amp_the_time_unit"><![CDATA[Enter a valid Repeat Interval & The Time Unit :]]></string>
+    <string name="choose_the_image_s_location">Choose the image location</string>
+    <string name="gallery">Gallery</string>
+    <string name="camera">Camera</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+    <string name="days">Days</string>
+    <string name="minutes">Minutes</string>
+    <string name="hours">Hours</string>
+    <string name="delay_time">Delay time: %s</string>
+    <string name="empty_reminders">Empty \n Reminders!\n</string>
+
+    <string name="reminder_notification">Take Your Pills That You Added!</string>
+    <string name="pick_a_favorite_sound">Pick a favorite sound</string>
+    <string name="sound_name_long">Long</string>
+    <string name="sound_name_cool">Cool</string>
+    <string name="sound_name_talking">Talking</string>
+    <string name="sound_name_bell">Bell</string>
+
+    <string name="placeholder">Not Specified</string>
+    <string name="do_you_really_want_to_log_out">Do you really want to log out!?</string>
+    <string name="logout">Logout</string>
+    <string name="cancel">Cancel</string>
+    <string name="allow">Allow</string>
+    <string name="deny">Deny</string>
+    <string name="permissions_message_starter">Our app uses the notification permission, to alert you with your reminder , please grant the following permissions</string>
+    <string name="permissions_message_we_are_sorry">we are sorry, you must allow the app to use certain permission in order to use this functionality , please grant the following permissions</string>
+    <string name="permissions_message_sorry_you_can_not">Sorry but you can\'t use this functionality!</string>
+    <string name="battery_optimization">To ensure proper functioning of reminders, please exclude this app from battery optimization.</string>
+    <string name="battery_optimization_still_running">YOUR REMINDER MIGHT NOT SHOW UP IN TIME!!!</string>
+    <string name="the_app_map" translatable="false">The app map</string>
+    <string name="map_add_address" translatable="false">Add Your Address</string>
+    <string name="medicines">Medicines</string>
+    <string name="pharmacies">Pharmacies</string>
+    <string name="like_button" translatable="false">LikeButton</string>
+    <string name="reminder_type_image" translatable="false">Reminder Type Image</string>
+    <string name="do_you_really_want_to_delete">Do you really want to delete!?</string>
+
+</resources>
