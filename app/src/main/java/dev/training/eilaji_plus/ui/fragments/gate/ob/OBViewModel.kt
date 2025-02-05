@@ -1,4 +1,4 @@
-package dev.training.eilaji_plus.ui.fragments.gate
+package dev.training.eilaji_plus.ui.fragments.gate.ob
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

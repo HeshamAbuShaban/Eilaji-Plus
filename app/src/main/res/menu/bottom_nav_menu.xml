@@ -2,27 +2,27 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_home"
+        android:id="@+id/destination_home"
         android:icon="@drawable/ic_home"
         android:title="@string/title_home" />
 
     <item
-        android:id="@+id/navigation_chatting"
+        android:id="@+id/destination_chatting"
         android:icon="@drawable/ic_message"
         android:title="@string/chats" />
 
     <item
-        android:id="@+id/navigation_send_prescription"
+        android:id="@+id/destination_prescription"
         android:icon="@drawable/ic_add_photo"
-        android:title="@string/send_prescription" />
+        android:title="@string/prescription" />
 
     <item
-        android:id="@+id/navigation_categories"
+        android:id="@+id/destination_categories"
         android:icon="@drawable/ic_dashboard"
         android:title="@string/title_categories" />
 
     <item
-        android:id="@+id/navigation_profile"
+        android:id="@+id/destination_profile"
         android:icon="@drawable/ic_person"
         android:title="@string/title_profile" />
 

@@ -1,0 +1,30 @@
+package dev.training.eilaji_plus.network
+
+import okhttp3.OkHttpClient
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.converter.scalars.ScalarsConverterFactory
+import java.util.concurrent.TimeUnit
+
+object ApiService {
+    private const val BASE_URL = "http://192.168.100.8:8080/api/" // Replace with your actual base URL.
+
+    // Build OkHttpClient with interceptors
+    private val okHttpClient: OkHttpClient by lazy {
+        OkHttpClient.Builder()
+            .connectTimeout(60, TimeUnit.SECONDS)
+            .readTimeout(60, TimeUnit.SECONDS)
+            .addInterceptor(SecureHeadersInterceptor()) // Custom headers interceptor
+            .build()
+    }
+
+    // Create Retrofit instance
+    val retrofit: Retrofit by lazy {
+        Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .client(okHttpClient)
+            .addConverterFactory(ScalarsConverterFactory.create()) // Add this for plain text responses
+            .addConverterFactory(GsonConverterFactory.create()) // Keep this for JSON responses
+            .build()
+    }
+}

@@ -1,4 +1,4 @@
-package dev.training.eilaji_plus.ui.fragments.gate
+package dev.training.eilaji_plus.ui.fragments.gate.ob
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,8 +12,8 @@ import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
 import dev.training.eilaji_plus.adapters.OnBoardingAdapter
-import dev.training.eilaji_plus.data.static_factory.AppSharedPreferences
-import dev.training.eilaji_plus.data.static_factory.StaticFactory
+import dev.training.eilaji_plus.app_system.AppSharedPreferences
+import dev.training.eilaji_plus.temp.static_factory.StaticFactory
 import dev.training.eilaji_plus.databinding.FragmentOnBoardingBinding
 import dev.training.eilaji_plus.utils.UtilsAnimation
 import dev.training.eilaji_plus.utils.UtilsScreen

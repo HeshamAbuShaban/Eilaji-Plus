@@ -1,4 +1,4 @@
-package dev.training.eilaji_plus.data.static_factory;
+package dev.training.eilaji_plus.app_system;
 
 import android.content.Context;
 import android.content.SharedPreferences;

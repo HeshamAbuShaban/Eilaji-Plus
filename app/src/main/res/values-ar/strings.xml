@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">علاجي بلس</string>
+    <string name="app_name">علاجي +</string>
     <string name="full_name">الاسم الكامل</string>
     <string name="password">كلمة المرور</string>
     <string name="email">البريد الالكتروني</string>
@@ -41,6 +41,7 @@
     <string name="title_categories">التصنيفات</string>
     <string name="pharmacies_map">الصيدليات على الخريطة</string>
     <string name="send_prescription">ارسال الروشتة</string>
+    <string name="prescription">الروشتة</string>
     <string name="search">أبحث</string>
     <string name="search_fragment_temp">This is a screen that shows when user clicks on Search bar in home!</string>
 

@@ -15,9 +15,10 @@ android {
     defaultConfig {
         applicationId = "dev.training.eilaji_plus"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
+        buildConfigField("String", "API_KEY", "\"${project.property("API_KEY")}\"")
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -55,29 +56,33 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     // Dagger - Hilt
-    implementation("com.google.dagger:hilt-android:2.48")
-    ksp("com.google.dagger:hilt-compiler:2.48")
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
 
     // View Model & Live Data
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.5")
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.8.5")
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
 
     // Navigation Component
-    val navVersion = "2.8.0"
-    implementation("androidx.navigation:navigation-fragment-ktx:$navVersion")
-    implementation("androidx.navigation:navigation-ui-ktx:$navVersion")
+    /*val navVersion = "2.8.0"*/
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
 
     // SDP & SSP
-    implementation("com.intuit.sdp:sdp-android:1.1.0")
-    implementation("com.intuit.ssp:ssp-android:1.1.0")
+    implementation(libs.sdp.android)
+    implementation(libs.ssp.android)
 
     // OTP Pin View
-    implementation("io.github.chaosleung:pinview:1.4.4")
+    implementation(libs.pinview)
 
     // Splash API
-    implementation("androidx.core:core-splashscreen:1.0.1")
+    implementation(libs.androidx.core.splashscreen)
 
-    // Firebase
+    // Coroutines
+    implementation(libs.coroutines.core)
+    implementation(libs.coroutines.android)
+
+    /*// Firebase
     implementation(platform("com.google.firebase:firebase-bom:32.2.3"))
     implementation("com.google.firebase:firebase-analytics-ktx")
     implementation("com.google.firebase:firebase-auth-ktx")
@@ -87,44 +92,59 @@ dependencies {
 
     // FirebaseUI for Firebase Realtime Database (FirebaseRecyclerAdapter)
     implementation("com.firebaseui:firebase-ui-database:8.0.2") // Consider migrating away from FirebaseUI Database, as it's no longer actively maintained
-
     // Consider replacing with a newer approach if still needed
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.0.3")
+    */
 
     // Google Maps
-    implementation("com.google.android.gms:play-services-maps:18.1.0")
-    implementation("com.google.android.gms:play-services-location:21.0.1")
+    implementation(libs.play.services.maps)
+    implementation(libs.play.services.location)
 
     /*// Horizontal Indicator (replace with actual dependency if available)
     implementation(project(":Horizontal-indicator-for-pager2-and-recycler"))*/
 
     // Glide
-    implementation("com.github.bumptech.glide:glide:4.16.0")
+    implementation(libs.glide)
+    ksp(libs.glide.compiler)
 
     // Rounded ImageView
-    implementation("com.makeramen:roundedimageview:2.3.0")
+    implementation(libs.roundedimageview)
 
     // Room Database
-    val roomVersion = "2.6.1"
-    implementation("androidx.room:room-runtime:$roomVersion")
-    ksp("androidx.room:room-compiler:$roomVersion")
+    /*val roomVersion = "2.6.1"*/
+    implementation(libs.androidx.room.runtime)
+    ksp(libs.androidx.room.compiler)
 
     /*
     // Magic Indicator
     implementation("com.github.hackware1993:MagicIndicator:1.8.0")*/
 
     // Worker Service
-    val workVersion = "2.9.1"
-    implementation("androidx.work:work-runtime-ktx:$workVersion")
+    /*val workVersion = "2.9.1"*/
+    implementation(libs.androidx.work.runtime.ktx)
 
     // Activity KTX
-    val activityVersion = "1.9.2"
-    implementation("androidx.activity:activity-ktx:$activityVersion")
+    /*val activityVersion = "1.9.2"*/
+    implementation(libs.androidx.activity.ktx)
 
     // Retrofit
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.converter.scalars)
+
+    // OkHttp3
+    implementation(libs.okhttp)
+    implementation(libs.logging.interceptor)
 
     // Shimmer
-    implementation("com.facebook.shimmer:shimmer:0.5.0")
+    implementation(libs.shimmer)
+
+
+    // AdvanceCore
+    // RefreshSwiperDown
+    implementation(libs.androidx.swiperefreshlayout)
+    // i think encrypted sharedpref
+    implementation(libs.androidx.security.crypto)
+    // fingerprint
+    implementation(libs.androidx.biometric)
 }

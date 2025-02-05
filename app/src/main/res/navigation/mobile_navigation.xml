@@ -3,12 +3,63 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/onBoardingFragment">
+    app:startDestination="@id/destination_login">
 
     <fragment
-        android:id="@+id/onBoardingFragment"
-        android:name="dev.training.eilaji_plus.ui.fragments.gate.OnBoardingFragment"
-        android:label="OnBoardingFragment"
+        android:id="@+id/destination_onBoarding"
+        android:name="dev.training.eilaji_plus.ui.fragments.gate.ob.OnBoardingFragment"
+        android:label="OnBoarding"
         tools:layout="@layout/fragment_on_boarding" />
+
+    <!--GATE-->
+    <fragment
+        android:id="@+id/destination_login"
+        android:name="dev.training.eilaji_plus.ui.fragments.gate.login.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login" />
+
+    <fragment
+        android:id="@+id/destination_register"
+        android:name="dev.training.eilaji_plus.ui.fragments.gate.register.RegisterFragment"
+        android:label="Register"
+        tools:layout="@layout/fragment_register" />
+
+    <fragment
+        android:id="@+id/destination_forgot_password"
+        android:name="dev.training.eilaji_plus.ui.fragments.gate.ForgotPasswordFragment"
+        android:label="Forgot Password"
+        tools:layout="@layout/fragment_forgot_password" />
+
+    <!--UserInterface-->
+
+    <fragment
+        android:id="@+id/destination_home"
+        android:name="dev.training.eilaji_plus.ui.fragments.user_interface.home.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/destination_chat"
+        android:name="dev.training.eilaji_plus.ui.fragments.user_interface.chat.ChatFragment"
+        android:label="Chat"
+        tools:layout="@layout/fragment_chatting" />
+
+    <fragment
+        android:id="@+id/destination_prescription"
+        android:name="dev.training.eilaji_plus.ui.fragments.user_interface.prescription.PrescriptionFragment"
+        android:label="Prescription"
+        tools:layout="@layout/fragment_send_prescription" />
+
+    <fragment
+        android:id="@+id/destination_categories"
+        android:name="dev.training.eilaji_plus.ui.fragments.user_interface.categories.CategoriesFragment"
+        android:label="Categories"
+        tools:layout="@layout/fragment_categories" />
+
+    <fragment
+        android:id="@+id/destination_profile"
+        android:name="dev.training.eilaji_plus.ui.fragments.user_interface.profile.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
 
 </navigation>

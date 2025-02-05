@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.user_interface.home.HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- marginTop _28sdp = _18sdp + shape_toolbar  corners 12dp -->
+
+        <!--searchBar-: TOBE DELETED-->
+        <View
+            android:id="@+id/searchViewListener"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_28sdp"
+            android:visibility="gone"
+            android:background="@drawable/shape_searchable_edittext"
+            android:drawableEnd="@drawable/ic_search"
+            android:hint="@string/what_are_you_looking_for"
+            android:inputType="text"
+            android:padding="@dimen/_13sdp"
+            android:textAlignment="viewStart"
+            android:textColorHint="@color/gray_dark"
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintBottom_toTopOf="@id/adsContainer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--AdsContainer-->
+        <LinearLayout
+            android:id="@+id/adsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@id/linearLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/searchViewListener">
+            <!--ADS Shimmer And A-VP-->
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmer_ad_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp">
+
+                <include layout="@layout/placeholder_ad_item" />
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
+            <!--Actual-->
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/pagerAds"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp" />
+        </LinearLayout>
+
+        <!--Indicator-->
+        <!--<dev.anonymous.horizontal_indicator.HorizontalIndicator
+            android:id="@+id/indicatorAds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:horizontalIndicatorSize="@dimen/_3sdp"
+            app:indicatorColor="@color/gray_dark"
+            app:indicatorMargin="@dimen/_4sdp"
+            app:indicatorRadius="@dimen/_5sdp"
+            app:indicatorWidthScale="4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/adsContainer"
+            app:selectedIndicatorColor="@color/primary_color"
+            app:selectedIndicatorWidthScale="8" />-->
+
+        <!-- marginEnd _15sdp + TextButton paddingStart _5sdp = _20sdp  -->
+
+        <!--DividerTitle-->
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/adsContainer">
+<!--            app:layout_constraintTop_toBottomOf="@id/indicatorAds"-->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/categories_pharmaceuticals"
+                android:textSize="@dimen/_13sdp" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/buShowAllCategoriesPharmaceuticals"
+                style="@style/TextButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/show_all"
+                android:textSize="@dimen/_13sdp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!--Categories Medicines Container-->
+        <LinearLayout
+            android:id="@+id/categoriesPharmaceuticalsContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+            <!--Shimmer-->
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmerCategoriesPharmaceuticalsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!--FakeScroller
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <include layout="@layout/placeholder_mh_item" />
+
+                        <Space
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="match_parent" />
+
+                        <include layout="@layout/placeholder_mh_item" />
+
+                        <Space
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="match_parent" />
+
+                        <include layout="@layout/placeholder_mh_item" />
+
+                        <Space
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="match_parent" />
+
+                        <include layout="@layout/placeholder_mh_item" />
+
+                        <Space
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="match_parent" />
+
+                        <include layout="@layout/placeholder_mh_item" />
+
+                    </LinearLayout>
+                </HorizontalScrollView>
+            -->
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+            <!--Actual-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerCategoriesPharmaceuticals"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="4"
+                tools:listitem="@layout/item_sub_category"
+                tools:orientation="horizontal" />
+        </LinearLayout>
+
+        <!--DividerTitleTwo-->
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/categoriesPharmaceuticalsContainer">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/best_seller"
+                android:textSize="@dimen/_13sdp" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/buShowAllBestSeller"
+                style="@style/TextButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/show_all"
+                android:textSize="@dimen/_13sdp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <!--MedsContainer-->
+        <LinearLayout
+            android:id="@+id/medContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+            <!--Shimmer-->
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmer_med_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <!--FakeRecycler
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbars="none">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <include layout="@layout/placeholder_med_item" />
+
+                        <Space
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="match_parent" />
+
+                        <include layout="@layout/placeholder_med_item" />
+
+                        <Space
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="match_parent" />
+
+                        <include layout="@layout/placeholder_med_item" />
+
+                        <Space
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="match_parent" />
+
+                        <include layout="@layout/placeholder_med_item" />
+
+                        <Space
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="match_parent" />
+
+                        <include layout="@layout/placeholder_med_item" />
+
+                    </LinearLayout>
+                </HorizontalScrollView>
+            -->
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+            <!--Actual-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerBestSeller"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:spanCount="5"
+                tools:itemCount="3"
+                tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_medicine"
+                tools:orientation="horizontal" />
+        </LinearLayout>
+
+        <!--Creating a Space-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_60sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/medContainer" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
