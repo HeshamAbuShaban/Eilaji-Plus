@@ -1,7 +1,6 @@
 buildscript {
     dependencies {
-        val navVersion = "2.8.0"
-        classpath("androidx.navigation:navigation-safe-args-gradle-plugin:$navVersion")
+        classpath("androidx.navigation:navigation-safe-args-gradle-plugin:2.8.6")
         classpath("com.google.dagger:hilt-android-gradle-plugin:2.48")
     }
 }
@@ -12,7 +11,7 @@ plugins {
 
     id("com.google.gms.google-services") version "4.4.2" apply false
     // Ksp
-    id("com.google.devtools.ksp") version "1.9.0-1.0.13" apply false
+    id("com.google.devtools.ksp") version "1.9.25-1.0.20" apply false
     // Dagger Hilt
     id("com.google.dagger.hilt.android") version "2.48" apply false
 }

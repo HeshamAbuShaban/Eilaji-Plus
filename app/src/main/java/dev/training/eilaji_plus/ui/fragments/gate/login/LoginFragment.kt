@@ -4,18 +4,17 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
-import com.google.android.material.snackbar.Snackbar
 import dev.training.eilaji_plus.databinding.FragmentLoginBinding
-import dev.training.eilaji_plus.temp.SingleObjects
-import dev.training.eilaji_plus.temp.dump.LoginViewModel
+import dev.training.eilaji_plus.vms.EntranceViewModel
 
 
 class LoginFragment : Fragment() {
     private lateinit var binding: FragmentLoginBinding
+    private lateinit var entranceViewModel: EntranceViewModel
+
+    // Remember to save token
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -23,6 +22,7 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentLoginBinding.inflate(inflater, container, false)
+        entranceViewModel = ViewModelProvider(requireActivity())[EntranceViewModel::class.java]
         return binding.root
     }
 
@@ -32,6 +32,24 @@ class LoginFragment : Fragment() {
     }
 
     private fun init() {
+        setupListeners()
+    }
 
+    private fun setupListeners() {
+        with(binding) {
+            buSignUp.setOnClickListener {
+                entranceViewModel.toSignUp()
+            }
+            buForgotPassword.setOnClickListener {
+                entranceViewModel.toForgetPassword()
+            }
+            buLogin.setOnClickListener {
+                performLogin()
+            }
+        }
+    }
+
+    private fun performLogin() {
+        entranceViewModel.toHome()
     }
 }

@@ -3,7 +3,7 @@
 
     <style name="Theme.App.Starting" parent="Theme.SplashScreen">
         <!--switch to what theme? after splash is done ,go ahead and set your main theme-->
-        <item name="postSplashScreenTheme">@style/Theme.EilajiPlus</item>
+        <item name="postSplashScreenTheme">@style/Theme.Eilaji</item>
 
         <!--BackgroundColor-->
         <item name="windowSplashScreenIconBackgroundColor">@color/night_window_background_color</item>

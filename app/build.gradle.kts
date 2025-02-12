@@ -10,7 +10,7 @@ plugins {
 
 android {
     namespace = "dev.training.eilaji_plus"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "dev.training.eilaji_plus"
@@ -25,6 +25,7 @@ android {
 
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
 
     buildTypes {

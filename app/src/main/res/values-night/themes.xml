@@ -1,6 +1,6 @@
 <resources>
 
-    <style name="Base.Theme.EilajiPlus" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.Eilaji" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="android:windowBackground">@color/night_window_background_color</item>
         <item name="android:navigationBarColor">@color/night_window_background_color</item>
         <item name="android:textViewStyle">@style/AppTextViewStyle</item>

@@ -109,12 +109,12 @@
             android:textColor="@color/primary_color"
             android:textSize="@dimen/_12ssp"
             android:theme="@style/checkBoxStyle"
-            app:layout_constraintBottom_toBottomOf="@+id/buForgotYourPassword"
+            app:layout_constraintBottom_toBottomOf="@+id/buForgotPassword"
             app:layout_constraintStart_toStartOf="@+id/guidelineBegin"
-            app:layout_constraintTop_toTopOf="@+id/buForgotYourPassword" />
+            app:layout_constraintTop_toTopOf="@+id/buForgotPassword" />
 
         <TextView
-            android:id="@+id/buForgotYourPassword"
+            android:id="@+id/buForgotPassword"
             style="@style/TextButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -135,7 +135,7 @@
             android:text="@string/login"
             app:layout_constraintEnd_toEndOf="@+id/guidelineEnd"
             app:layout_constraintStart_toStartOf="@+id/guidelineBegin"
-            app:layout_constraintTop_toBottomOf="@+id/buForgotYourPassword" />
+            app:layout_constraintTop_toBottomOf="@+id/buForgotPassword" />
 
         <TextView
             android:id="@+id/textView"

@@ -6,21 +6,22 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.findNavController
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
 import dev.training.eilaji_plus.adapters.OnBoardingAdapter
-import dev.training.eilaji_plus.app_system.AppSharedPreferences
-import dev.training.eilaji_plus.temp.static_factory.StaticFactory
+import dev.training.eilaji_plus.data.static_factory.StaticFactory
 import dev.training.eilaji_plus.databinding.FragmentOnBoardingBinding
 import dev.training.eilaji_plus.utils.UtilsAnimation
 import dev.training.eilaji_plus.utils.UtilsScreen
+import dev.training.eilaji_plus.vms.EntranceViewModel
 
 class OnBoardingFragment : Fragment() {
     private lateinit var binding: FragmentOnBoardingBinding
     private val onBoardingViewModel: OBViewModel by viewModels()
+    private lateinit var entranceViewModel: EntranceViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,6 +29,7 @@ class OnBoardingFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentOnBoardingBinding.inflate(inflater, container, false)
+        entranceViewModel = ViewModelProvider(requireActivity())[EntranceViewModel::class.java]
         return binding.root
     }
 
@@ -76,10 +78,10 @@ class OnBoardingFragment : Fragment() {
 
     private fun setupNextArrowButton() {
         binding.buNextArrow.setOnClickListener {
-            val currentItem = binding.onBoardingPager.currentItem + 1
+            val toShow = binding.onBoardingPager.currentItem + 1
             val lastItem = StaticFactory.onBoardingItems.size - 1
-            if (currentItem < lastItem) {
-                binding.onBoardingPager.currentItem = currentItem
+            if (toShow < lastItem) {
+                binding.onBoardingPager.currentItem = toShow
             } else {
                 onBoardingViewModel.reachedTheLastPage()
                 binding.onBoardingPager.currentItem = 0
@@ -90,25 +92,7 @@ class OnBoardingFragment : Fragment() {
     private fun navToLoginController() {
         onBoardingViewModel.navigateToLogin.observe(viewLifecycleOwner) { navigateToLogin ->
             if (navigateToLogin) {
-                //Get the NavController  inside a fragment that is hosted within an activity with a NavHostFragment
-                val navController = findNavController()
-
-                // removes the onBoardingScreen of the back stack
-                navController.popBackStack()
-
-
-                // STOPSHIP: Make Login Fragment Next
-                // TODO : Stopped Here
-/*
-                // navigate to the Login with making sure there is no return cause of the line above
-                val directions = OnBoardingFragmentDirections.actionNavigationOnBoardingToNavigationLogin()
-                navController.navigate(directions)
-*/
-
-                // TODO Fix this shit
-                //Set the sheared Value to True
-                AppSharedPreferences.getInstance(requireContext()).doneWithOnBoarding()
-                AppSharedPreferences.getInstance(requireContext()).setHeIsFirstTimeDone()
+                entranceViewModel.toLogin()
             }
         }
     }

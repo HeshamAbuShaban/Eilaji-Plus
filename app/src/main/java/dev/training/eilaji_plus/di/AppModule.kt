@@ -2,7 +2,6 @@ package dev.training.eilaji_plus.di
 
 import android.content.Context
 import android.content.SharedPreferences
-import androidx.room.Room
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
@@ -12,28 +11,30 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import dev.training.eilaji_plus.R
+import dev.training.eilaji_plus.app_system.Keys
+import dev.training.eilaji_plus.app_system.PreferencesManager
 import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
 
-/*
-    @Singleton
-    @Provides
-    fun provideRunningDatabase(
-        @ApplicationContext applicationContext: Context,
-    ) = Room.databaseBuilder(
-        context = applicationContext,
-        klass = RunningDatabase::class.java,
-        name = RUNNING_DATABASE_NAME
-    ).build()
+    /*
+        @Singleton
+        @Provides
+        fun provideRunningDatabase(
+            @ApplicationContext applicationContext: Context,
+        ) = Room.databaseBuilder(
+            context = applicationContext,
+            klass = RunningDatabase::class.java,
+            name = RUNNING_DATABASE_NAME
+        ).build()
 
 
-    @Singleton
-    @Provides
-    fun provideRunningDao(db: RunningDatabase) = db.getRunDao()
-*/
+        @Singleton
+        @Provides
+        fun provideRunningDao(db: RunningDatabase) = db.getRunDao()
+    */
 
     @Singleton
     @Provides
@@ -48,12 +49,6 @@ object AppModule {
                 .diskCacheStrategy(DiskCacheStrategy.DATA)
         )
 
-    /**
-     *  Context.MODE_PRIVATE
-     *  ..that means only our app
-     *  is able to read
-     *  form the sharedPreferences file
-
     @Singleton
     @Provides
     fun provideSharedPreferences(
@@ -63,23 +58,8 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideAppSharedPreferences(
-        sharedPreferences: SharedPreferences,
-    ): AppSharedPreferences = AppSharedPreferences(sharedPreferences)
+    fun providePreferencesManager(
+        sharedPreferences: SharedPreferences
+    ) = PreferencesManager(sharedPreferences)
 
-    @Singleton
-    @Provides
-    fun provideUsername(appSharedPreference: AppSharedPreferences): String =
-        appSharedPreference.getUsername()
-
-    @Singleton
-    @Provides
-    fun provideWeight(appSharedPreference: AppSharedPreferences): Float =
-        appSharedPreference.getWeight()
-
-    @Singleton
-    @Provides
-    fun provideFirstTimeToggle(appSharedPreference: AppSharedPreferences): Boolean =
-        appSharedPreference.getFirstTimeToggle()
-    */
 }

@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import dev.training.eilaji_plus.data.models.fixed.OnBoardingItem
-import dev.training.eilaji_plus.temp.static_factory.StaticFactory
+import dev.training.eilaji_plus.data.static_factory.StaticFactory
 import dev.training.eilaji_plus.databinding.ItemOnBoardingBinding
 
 class OnBoardingAdapter : RecyclerView.Adapter<OnBoardingAdapter.OnBoardingViewHolder>() {
