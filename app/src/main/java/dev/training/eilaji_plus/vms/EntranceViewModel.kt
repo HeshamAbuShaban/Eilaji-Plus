@@ -3,7 +3,7 @@ package dev.training.eilaji_plus.vms
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import dev.training.eilaji_plus.app_system.PreferencesManager
+import dev.training.eilaji_plus.core.PreferencesManager
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch

@@ -35,4 +35,24 @@
         android:label="Profile"
         tools:layout="@layout/fragment_profile" />
 
+    <!-- Features -->
+    <fragment
+        android:id="@+id/destination_map"
+        android:name="dev.training.eilaji_plus.ui.fragments.feat.MapFragment"
+        android:label="Map"
+        tools:layout="@layout/fragment_map" />
+
+    <fragment
+        android:id="@+id/destination_reminder"
+        android:name="dev.training.eilaji_plus.ui.fragments.feat.ReminderFragment"
+        android:label="Reminder"
+        tools:layout="@layout/fragment_reminder" />
+
+    <fragment
+        android:id="@+id/destination_search"
+        android:name="dev.training.eilaji_plus.ui.fragments.feat.SearchFragment"
+        android:label="Search"
+        tools:layout="@layout/fragment_search" />
+
+
 </navigation>

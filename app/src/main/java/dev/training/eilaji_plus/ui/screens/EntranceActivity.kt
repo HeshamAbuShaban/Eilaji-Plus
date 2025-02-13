@@ -13,7 +13,7 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import dagger.hilt.android.AndroidEntryPoint
 import dev.training.eilaji_plus.R
-import dev.training.eilaji_plus.app_system.PreferencesManager
+import dev.training.eilaji_plus.core.PreferencesManager
 import dev.training.eilaji_plus.databinding.ActivityEntranceBinding
 import dev.training.eilaji_plus.vms.EntranceViewModel
 import kotlinx.coroutines.flow.collectLatest

@@ -11,8 +11,9 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import dev.training.eilaji_plus.R
-import dev.training.eilaji_plus.app_system.Keys
-import dev.training.eilaji_plus.app_system.PreferencesManager
+import dev.training.eilaji_plus.core.Keys
+import dev.training.eilaji_plus.core.PreferencesManager
+import dev.training.eilaji_plus.utils.location.LocationController
 import javax.inject.Singleton
 
 @Module
@@ -61,5 +62,12 @@ object AppModule {
     fun providePreferencesManager(
         sharedPreferences: SharedPreferences
     ) = PreferencesManager(sharedPreferences)
+
+
+    @Singleton
+    @Provides
+    fun provideLocationController(
+        @ApplicationContext context: Context,
+    ): LocationController = LocationController(context)
 
 }

@@ -7,7 +7,7 @@
         android:title="@string/title_home" />
 
     <item
-        android:id="@+id/destination_chatting"
+        android:id="@+id/destination_chat"
         android:icon="@drawable/ic_message"
         android:title="@string/chats" />
 

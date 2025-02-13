@@ -20,7 +20,7 @@ import dev.training.eilaji_plus.vms.EntranceViewModel
 
 class OnBoardingFragment : Fragment() {
     private lateinit var binding: FragmentOnBoardingBinding
-    private val onBoardingViewModel: OBViewModel by viewModels()
+    private val onBoardingViewModel: OBViewModel by viewModels<OBViewModel>()
     private lateinit var entranceViewModel: EntranceViewModel
 
     override fun onCreateView(
