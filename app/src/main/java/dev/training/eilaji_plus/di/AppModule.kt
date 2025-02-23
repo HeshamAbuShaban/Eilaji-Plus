@@ -46,8 +46,11 @@ object AppModule {
         .setDefaultRequestOptions(
             RequestOptions()
                 .placeholder(R.drawable.ic_launcher_foreground)
-                .error(R.drawable.ic_visibility_off)
+                .error(R.drawable.ic_launcher_foreground)
                 .diskCacheStrategy(DiskCacheStrategy.DATA)
+                .centerCrop()
+                .circleCrop()
+                .skipMemoryCache(true)
         )
 
     @Singleton

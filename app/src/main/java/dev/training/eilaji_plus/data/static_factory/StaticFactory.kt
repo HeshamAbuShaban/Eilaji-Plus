@@ -2,6 +2,7 @@ package dev.training.eilaji_plus.data.static_factory
 
 import dev.training.eilaji_plus.R
 import dev.training.eilaji_plus.data.models.fixed.OnBoardingItem
+import dev.training.eilaji_plus.data.models.server.Ad
 import dev.training.eilaji_plus.data.models.server.Pharmacy
 import dev.training.eilaji_plus.data.models.server.SubCategory
 
@@ -25,27 +26,27 @@ object StaticFactory {
     val listSubCategories = listOf(
         SubCategory(
             "095f3500-6321-4f27-bd33-c39fa9d232b1",
+            "E3RPh39EA3NrLaDMRFdg",
             "https://m7et.com/wp-content/uploads/2021/04/%D8%B7%D8%B1%D9%82-%D8%A7%D9%84%D8%B9%D9%86%D8%A7%D9%8A%D8%A9-%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D9%86%D8%A7%D9%86-%D9%81%D9%8A-%D8%A7%D9%84%D9%85%D9%86%D8%B2%D9%84-780x470.jpg.webp",
             "عيون",
-            "E3RPh39EA3NrLaDMRFdg"
         ),
         SubCategory(
             "1412ef0b-b622-45c8-b30c-a3feaa83494b",
+            "E3RPh39EA3NrLaDMRFdg",
             "https://www.afdal.best/wp-content/uploads/2020/10/Teaser-BlueHeaven-CDP-Teaser-3080x806-ar.jpg",
             "مرطبات الجلد",
-            "E3RPh39EA3NrLaDMRFdg"
         ),
         SubCategory(
             "095f3500-6321-4f27-bd33-c39fa9d232b1",
+            "E3RPh39EA3NrLaDMRFdg",
             "https://m7et.com/wp-content/uploads/2021/04/%D8%B7%D8%B1%D9%82-%D8%A7%D9%84%D8%B9%D9%86%D8%A7%D9%8A%D8%A9-%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D9%86%D8%A7%D9%86-%D9%81%D9%8A-%D8%A7%D9%84%D9%85%D9%86%D8%B2%D9%84-780x470.jpg.webp",
             "أسنان",
-            "E3RPh39EA3NrLaDMRFdg"
         ),
         SubCategory(
             "095f3500-6321-4f27-bd33-c39fa9d232b1",
             "https://m7et.com/wp-content/uploads/2021/04/%D8%B7%D8%B1%D9%82-%D8%A7%D9%84%D8%B9%D9%86%D8%A7%D9%8A%D8%A9-%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D9%86%D8%A7%D9%86-%D9%81%D9%8A-%D8%A7%D9%84%D9%85%D9%86%D8%B2%D9%84-780x470.jpg.webp",
+            "E3RPh39EA3NrLaDMRFdg",
             "الحنجرة",
-            "E3RPh39EA3NrLaDMRFdg"
         )
     )
 
@@ -102,4 +103,46 @@ object StaticFactory {
         )
     )
 
+    val ads = listOf(
+        Ad(
+            "1",
+            "https://www.alldaychemist.com/pub/media/catalog/product/cache/ce44d1d7776a58df660c373780297695/t/r/trifed-tablets-india_1_1.png",
+            "Trifed"
+        ),
+        Ad(
+            "2",
+            "https://media.istockphoto.com/id/1097992544/photo/aspirin-pill-on-a-white-background.jpg?s=612x612&w=0&k=20&c=rYlWqL4_6n1jFv0_wWp0-0Z_39d8Vq9hU-2iI3rQvU8=",
+            "Aspirin"
+        ),
+        Ad(
+            "3",
+            "https://cdn.shopify.com/s/files/1/0666/7943/products/481328_1_400x.jpg?v=1675718347",
+            "Acamol"
+        ),
+        Ad(
+            "4",
+            "https://www.p514.com/50519-large_default/%D9%85%D8%B3%D9%83%D9%91%D9%86%D8%A7%D8%AA-%D8%A8%D8%A7%D8%B1%D8%A7%D8%B3%D9%8A%D8%AA%D8%A7%D9%85%D9%88%D9%84-500-%D9%85%D8%BA.jpg",
+            "paracetamol"
+        ),
+        Ad(
+            "5",
+            "",
+            "Trofin"
+        ),
+        Ad(
+            "6",
+            "",
+            "Nurofen"
+        ),
+        Ad(
+            "7",
+            "",
+            "Mefenamic"
+        ),
+        Ad(
+            "8",
+            "https://www.p514.com/50519-large_default/%D9%85%D8%B3%D9%83%D9%",
+            "Nexuim"
+        )
+    )
 }

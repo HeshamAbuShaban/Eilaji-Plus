@@ -127,10 +127,13 @@
             <!--Shimmer-->
             <com.facebook.shimmer.ShimmerFrameLayout
                 android:id="@+id/shimmerCategoriesPharmaceuticalsContainer"
+                app:shimmer_auto_start="true"
+                app:shimmer_shape="radial"
+                app:shimmer_base_color="@color/light_pink"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <!--FakeScroller
+                <!--FakeScroller-->
                 <HorizontalScrollView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -168,7 +171,7 @@
 
                     </LinearLayout>
                 </HorizontalScrollView>
-            -->
+
             </com.facebook.shimmer.ShimmerFrameLayout>
 
             <!--Actual-->
@@ -231,9 +234,12 @@
             <!--Shimmer-->
             <com.facebook.shimmer.ShimmerFrameLayout
                 android:id="@+id/shimmer_med_container"
+                app:shimmer_auto_start="true"
+                app:shimmer_shape="linear"
+                app:shimmer_base_color="@color/light_pink"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-                <!--FakeRecycler
+                <!--FakeRecycler-->
                 <HorizontalScrollView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -245,32 +251,21 @@
                         <include layout="@layout/placeholder_med_item" />
 
                         <Space
-                            android:layout_width="@dimen/_15sdp"
+                            android:layout_width="@dimen/_5sdp"
                             android:layout_height="match_parent" />
 
                         <include layout="@layout/placeholder_med_item" />
 
                         <Space
-                            android:layout_width="@dimen/_15sdp"
+                            android:layout_width="@dimen/_5sdp"
                             android:layout_height="match_parent" />
 
                         <include layout="@layout/placeholder_med_item" />
 
-                        <Space
-                            android:layout_width="@dimen/_15sdp"
-                            android:layout_height="match_parent" />
-
-                        <include layout="@layout/placeholder_med_item" />
-
-                        <Space
-                            android:layout_width="@dimen/_15sdp"
-                            android:layout_height="match_parent" />
-
-                        <include layout="@layout/placeholder_med_item" />
 
                     </LinearLayout>
                 </HorizontalScrollView>
-            -->
+
             </com.facebook.shimmer.ShimmerFrameLayout>
 
             <!--Actual-->

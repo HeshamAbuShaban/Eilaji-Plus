@@ -100,11 +100,8 @@ class MapViewModel @Inject constructor(application: Application) : AndroidViewMo
 
     // are the permissions granted ?
     fun arePermissionsGranted(): Boolean {
-        return REQUIRED_PERMISSIONS.all {
-            ContextCompat.checkSelfPermission(
-                getApplication(),
-                it
-            ) == PackageManager.PERMISSION_GRANTED
+        return REQUIRED_PERMISSIONS.all { permission ->
+            ContextCompat.checkSelfPermission(getApplication(), permission) == PackageManager.PERMISSION_GRANTED
         }
     }
 

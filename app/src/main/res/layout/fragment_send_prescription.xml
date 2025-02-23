@@ -6,150 +6,147 @@
     android:layout_height="match_parent"
     tools:context=".ui.fragments.user_interface.prescription.PrescriptionFragment">
 
-    <ScrollView
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_24sdp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            app:cardCornerRadius="@dimen/_10sdp"
+            app:cardElevation="@dimen/_3sdp">
+
+            <LinearLayout
+                style="@style/RippleRectangleEffectCardStyle"
+                android:id="@+id/sendPrescriptionLinearParent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvAds"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.9"
+                    android:gravity="center"
+                    android:paddingHorizontal="@dimen/_18sdp"
+                    android:text="@string/attach_a_picture_of_a_prescription"
+                    android:textSize="@dimen/_16ssp"
+                    android:textStyle="bold" />
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/ivAddPrescriptionImage"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_100sdp"
+                    android:layout_weight="1"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/placeholder_add_image"
+                    app:riv_corner_radius="@dimen/_10sdp" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- 40sdp = marginTop _25sdp + CardView marginVertical _15sdp -->
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/_20sdp"
-                android:layout_marginTop="@dimen/_24sdp"
-                android:layout_marginBottom="@dimen/_15sdp"
-                app:cardCornerRadius="@dimen/_10sdp"
-                app:cardElevation="@dimen/_3sdp">
-
-                <LinearLayout
-                    android:id="@+id/sendPrescriptionLinearParent"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/tvAds"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.9"
-                        android:gravity="center"
-                        android:paddingHorizontal="@dimen/_18sdp"
-                        android:text="@string/attach_a_picture_of_a_prescription"
-                        android:textSize="@dimen/_16ssp"
-                        android:textStyle="bold" />
-
-                    <com.makeramen.roundedimageview.RoundedImageView
-                        android:id="@+id/ivAddPrescriptionImage"
-                        android:layout_width="0dp"
-                        android:layout_height="@dimen/_100sdp"
-                        android:layout_weight="1"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/placeholder_add_image"
-                        app:riv_corner_radius="@dimen/_10sdp" />
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <!-- 40sdp = marginTop _25sdp + CardView marginVertical _15sdp -->
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_20sdp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <View
-                    style="@style/black_light_white_night_background"
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/_1sdp"
-                    android:layout_marginStart="@dimen/_20sdp"
-                    android:layout_weight="1" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="@dimen/_15sdp"
-                    android:gravity="center"
-                    android:text="@string/or"
-                    android:textSize="@dimen/_16ssp"
-                    android:textStyle="bold" />
-
-                <View
-                    style="@style/black_light_white_night_background"
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/_1sdp"
-                    android:layout_marginEnd="@dimen/_20sdp"
-                    android:layout_weight="1" />
-
-            </LinearLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputLayoutAskAboutPrescription"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/_20sdp"
-                android:layout_marginTop="@dimen/_20sdp"
-                android:hint="@string/description_of_the_prescription"
-                app:boxStrokeColor="@drawable/selector_text_input_ask_about_prescription"
-                app:boxStrokeWidth="@dimen/_1sdp"
-                app:boxStrokeWidthFocused="@dimen/_1sdp"
-                app:expandedHintEnabled="false"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edAskAboutPrescription"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="top|start"
-                    android:hint="@string/write_your_application_here"
-                    android:inputType="textMultiLine"
-                    android:maxLines="8"
-                    android:minLines="5"
-                    android:textColorHint="@color/gray_dark"
-                    tools:ignore="TextContrastCheck,VisualLintTextFieldSize" />
-
-            </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginTop="@dimen/_20sdp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
             <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_45sdp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/recyclerBestSeller" />
+                style="@style/black_light_white_night_background"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:gravity="center"
+                android:text="@string/or"
+                android:textSize="@dimen/_16ssp"
+                android:textStyle="bold" />
+
+            <View
+                style="@style/black_light_white_night_background"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_weight="1" />
 
         </LinearLayout>
 
-    </ScrollView>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutAskAboutPrescription"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:hint="@string/description_of_the_prescription"
+            app:boxStrokeColor="@drawable/selector_text_input_ask_about_prescription"
+            app:boxStrokeWidth="@dimen/_1sdp"
+            app:boxStrokeWidthFocused="@dimen/_1sdp"
+            app:expandedHintEnabled="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
-    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:id="@+id/fabSendPrescription"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_marginEnd="@dimen/_12sdp"
-        android:layout_marginBottom="@dimen/_70sdp"
-        android:contentDescription="@null"
-        android:text="@string/send"
-        android:textColor="@color/white"
-        app:backgroundTint="@color/primary_color"
-        app:icon="@drawable/ic_send"
-        app:iconGravity="textEnd"
-        app:iconPadding="@dimen/_20ssp"
-        app:iconTint="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="TextContrastCheck" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edAskAboutPrescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top|start"
+                android:hint="@string/write_your_application_here"
+                android:inputType="textMultiLine"
+                android:maxLines="8"
+                android:minLines="5"
+                android:textColorHint="@color/gray_dark"
+                tools:ignore="TextContrastCheck,VisualLintTextFieldSize" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_95sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerBestSeller" />
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/fabSendPrescription"
+            style="@style/RippleRectangleEffectCardStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:contentDescription="@null"
+            android:text="@string/send"
+            android:textColor="@color/white"
+            app:backgroundTint="@color/primary_color"
+            app:icon="@drawable/ic_send"
+            app:iconGravity="textEnd"
+            app:iconPadding="@dimen/_20ssp"
+            app:iconTint="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="TextContrastCheck" />
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

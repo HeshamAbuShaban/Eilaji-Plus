@@ -77,8 +77,7 @@ class MapFragment : Fragment(), OnMapReadyCallback,
     private fun setupVMComponent() {
         // Initialize the view model
         mapViewModel = ViewModelProvider(this)[MapViewModel::class.java]
-        requestPermissionLauncher =
-            registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { permissions ->
+        requestPermissionLauncher = registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { permissions ->
                 // Check if all permissions are granted
                 val allGranted = permissions.all { it.value }
                 if (allGranted) {

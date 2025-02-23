@@ -54,7 +54,7 @@ class PermissionHandler(private val context: Context) {
 
     // Example scenario where the callback is used
     fun performActionRequiringPermissions() {
-        if (permissionCallback == null) {
+        if (!::permissionCallback.isInitialized) {
             throw NullPointerException("Permission callback is not set. Make sure to call setPermissionCallback() before performing the action requiring permissions.")
         }
         if (arePermissionsGranted()) {

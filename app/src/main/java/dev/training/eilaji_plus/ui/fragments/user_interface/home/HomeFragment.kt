@@ -11,6 +11,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import dev.training.eilaji_plus.adapters.AdsAdapter
 import dev.training.eilaji_plus.adapters.SubCategoriesAdapter
 import dev.training.eilaji_plus.data.models.server.Ad
+import dev.training.eilaji_plus.data.static_factory.StaticFactory
 import dev.training.eilaji_plus.databinding.FragmentHomeBinding
 import dev.training.eilaji_plus.utils.views.DepthPageTransformer
 import javax.inject.Inject
@@ -21,6 +22,7 @@ class HomeFragment : Fragment() {
 
     @Inject
     lateinit var adsAdapter: AdsAdapter
+
     @Inject
     lateinit var subCategoriesAdapter: SubCategoriesAdapter
 
@@ -40,14 +42,10 @@ class HomeFragment : Fragment() {
 
     private fun init() {
         setupListeners()
+        startShimmers()
         fetchAds()
         displayAds()
-        setupSubCategoriesRec()
-    }
-
-    override fun onStart() {
-        super.onStart()
-        startShimmers()
+        displaySubCategories()
     }
 
     private fun startShimmers() {
@@ -55,6 +53,10 @@ class HomeFragment : Fragment() {
             shimmerAdContainer.startShimmer()
             shimmerMedContainer.startShimmer()
             shimmerCategoriesPharmaceuticalsContainer.startShimmer()
+
+            shimmerAdContainer.showShimmer(true)
+            shimmerMedContainer.showShimmer(true)
+            shimmerCategoriesPharmaceuticalsContainer.showShimmer(true)
         }
     }
 
@@ -88,13 +90,38 @@ class HomeFragment : Fragment() {
             removeAdsShimmer()
             setupAdsPager(adsList)
         }*/
-        val adsList = emptyList<Ad>()
-        setupAdsPager(adsList)
-        removeAdsShimmer()
+
+        // temporarily simulate ads loading time
+        with(binding.shimmerAdContainer) {
+            startShimmers()
+            postDelayed({
+                val adsList = StaticFactory.ads
+                removeAdsShimmer()
+                setupAdsPager(adsList)
+            }, 4500)
+        }
+    }
+
+    private fun displaySubCategories() {
+        // temporarily simulate SubCategories loading time
+        with(binding.shimmerCategoriesPharmaceuticalsContainer) {
+            startShimmers()
+            postDelayed({
+                removeSubCShimmer()
+                setupSubCategoriesRec()
+            }, 4500)
+        }
     }
 
     private fun removeAdsShimmer() {
         with(binding.shimmerAdContainer) {
+            stopShimmer()
+            visibility = View.GONE
+        }
+    }
+
+    private fun removeSubCShimmer() {
+        with(binding.shimmerCategoriesPharmaceuticalsContainer) {
             stopShimmer()
             visibility = View.GONE
         }
